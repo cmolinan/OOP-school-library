@@ -7,7 +7,7 @@
 * Save records of who borrowed a given book and when.
 * And all of this will be built in a beautiful and well-organized way!
 
-This BRANCH provids the Milestone #1: add Person, Student and Teacher classes
+This BRANCH provides the Milestone #2: decorate a class
 
 
 ## Getting Started
@@ -17,7 +17,7 @@ git clone https://github.com/cmolinan/OOP-school-library in your terminal
 
 Then, get inside the src directory and run the main.br program
 cd src
-ruby main.rb
+ruby person.rb
 
 ## Author
 👤 **Carlos Molina**
