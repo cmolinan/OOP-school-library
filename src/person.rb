@@ -7,7 +7,10 @@
 # Private method is_of_age? that returns true if @age is greater or equal to 18 and false otherwise.
 # Public method can_use_services? that returns true if person is of age or if they have permission from parents.
 
-class Person
+require_relative 'deco_classes'
+# Turn your Person class to Nameable
+# Make sure that your Person class inherits from Nameable
+class Person < Nameable
   # Getter and Setter
   attr_accessor :name, :age
 
@@ -16,10 +19,17 @@ class Person
 
   # Constructor
   def initialize(age, name = 'Unknown', parent_permission: true)
+    super()
     @id = Random.rand(1..1000)
     @age = age
     @name = name
     @parent_permission = parent_permission
+  end
+
+  # Make sure that this class has a method correct_name implemented.
+  # It should simply return the name attribute.
+  def correct_name
+    @name
   end
 
   # Private Method
@@ -33,3 +43,17 @@ class Person
 
   private :of_age?
 end
+
+# See your decorators in action
+# Try the following code and check if you managed to decorate your person:
+person = Person.new(22, 'maximilianus')
+puts person.correct_name
+# maximilianus
+
+capitalized_person = CapitalizeDecorator.new(person)
+puts capitalized_person.correct_name
+# Maximilianus
+
+capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
+puts capitalized_trimmed_person.correct_name
+# Maximilian
