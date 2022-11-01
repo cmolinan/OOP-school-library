@@ -9,9 +9,9 @@ end
 # Prepare base Decorator. Make sure that it inherits from Nameable.
 class BaseDecorator < Nameable
   # In the constructor assign a nameable object from params to an instance variable.
-  def initialize(name)
+  def initialize(nameable)
     super()
-    @name = name
+    @name = nameable
   end
 
   # Implement the correct_name method that returns the result of the correct_name method of the @nameable.
