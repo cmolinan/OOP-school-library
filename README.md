@@ -7,7 +7,7 @@
 * Save records of who borrowed a given book and when.
 * And all of this will be built in a beautiful and well-organized way!
 
-This BRANCH provides the Milestone #2: decorate a class
+This BRANCH provides the Milestone #3: set up associations
 
 
 ## Getting Started
