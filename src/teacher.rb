@@ -3,6 +3,8 @@
 # Constructor extends parent's constructor by adding @specialization and a parameter for it.
 # Override can_use_services? so it always returns true.
 
+require_relative 'person'
+
 class Teacher < Person
   # Constructor
   def initialize(specialization, age, name = 'Unknown', parent_permission: true)

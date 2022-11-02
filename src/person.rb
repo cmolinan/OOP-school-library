@@ -8,14 +8,15 @@
 # Public method can_use_services? that returns true if person is of age or if they have permission from parents.
 
 require_relative 'deco_classes'
+require_relative 'rental'
 # Turn your Person class to Nameable
 # Make sure that your Person class inherits from Nameable
 class Person < Nameable
   # Getter and Setter
-  attr_accessor :name, :age
+  attr_accessor :name, :age, :rentals
 
   # Getter
-  attr_reader :id
+  attr_reader :id, :parent_permission
 
   # Constructor
   def initialize(age, name = 'Unknown', parent_permission: true)
@@ -24,6 +25,7 @@ class Person < Nameable
     @age = age
     @name = name
     @parent_permission = parent_permission
+    @rentals = []
   end
 
   # Make sure that this class has a method correct_name implemented.
@@ -39,6 +41,11 @@ class Person < Nameable
 
   def can_use_services?
     of_age? || parent_permission
+  end
+
+  # -Create the has-many side of Person and Rental (a person has many rentals).
+  def add_rental(book, date)
+    Rental.new(date, book, self)
   end
 
   private :of_age?
