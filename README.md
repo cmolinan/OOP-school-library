@@ -7,7 +7,7 @@
 * Save records of who borrowed a given book and when.
 * And all of this will be built in a beautiful and well-organized way!
 
-This BRANCH provides the Milestone #3: set up associations
+This BRANCH provides the Milestone #4: add basic UI
 
 
 ## Getting Started
@@ -15,9 +15,9 @@ This BRANCH provides the Milestone #3: set up associations
 To get a local copy up and running follow these simple steps.
 git clone https://github.com/cmolinan/OOP-school-library in your terminal
 
-Then, get inside the src directory and run the main.br program
+Then, get inside the src directory and run the main.rb program
 cd src
-ruby person.rb
+ruby main.rb
 
 ## Author
 👤 **Carlos Molina**
