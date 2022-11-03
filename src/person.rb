@@ -51,16 +51,16 @@ class Person < Nameable
   private :of_age?
 end
 
-# See your decorators in action
-# Try the following code and check if you managed to decorate your person:
-person = Person.new(22, 'maximilianus')
-puts person.correct_name
-# maximilianus
+# # See your decorators in action
+# # Try the following code and check if you managed to decorate your person:
+# person = Person.new(22, 'maximilianus')
+# puts person.correct_name
+# # maximilianus
 
-capitalized_person = CapitalizeDecorator.new(person)
-puts capitalized_person.correct_name
-# Maximilianus
+# capitalized_person = CapitalizeDecorator.new(person)
+# puts capitalized_person.correct_name
+# # Maximilianus
 
-capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
-puts capitalized_trimmed_person.correct_name
-# Maximilian
+# capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
+# puts capitalized_trimmed_person.correct_name
+# # Maximilian
