@@ -1,23 +1,10 @@
-require_relative 'person'
+require_relative 'book'
 require_relative 'teacher'
 require_relative 'student'
-require_relative 'classroom'
-require_relative 'book'
 require_relative 'rental'
+require_relative 'person'
 
-class App
-  def list_all_books(db_books)
-    puts "\nNo books available yet" if db_books.empty?
-    puts
-    db_books.each { |book| puts "Title: \"#{book.title}\", Author: #{book.author}" }
-  end
-
-  def list_all_people(db_persons)
-    puts "\nNo people available yet" if db_persons.empty?
-    puts
-    db_persons.each { |person| puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}" }
-  end
-
+class Creates
   def create_book(db_books)
     print "\nTitle: "
     title = gets.chomp
@@ -31,19 +18,6 @@ class App
     else
       puts "\nMust enter title and author to create a book"
     end
-  end
-
-  def init_books_and_persons(db_books, db_persons)
-    puts "\nBOOKS AND PERSONS ADDED !"
-    db_books << Book.new('The King', 'Richard Harris')
-    db_books << Book.new('Sophie', 'Mark Twain')
-    db_books << Book.new('The Cure', 'Fred Winnipeg')
-
-    db_persons << Teacher.new('Biology', 41, 'Martha Ross')
-    db_persons << Teacher.new('History', 33, 'John Matheus')
-
-    db_persons << Student.new(21, 'Richard', parent_permission: true)
-    db_persons << Student.new(14, 'Mary', parent_permission: false)
   end
 
   def create_person(db_persons)
@@ -117,28 +91,5 @@ class App
 
     person_selected.add_rental(book_selected, date)
     puts "\nRental created successfully for #{person_selected.name}"
-  end
-
-  def list_rentals(db_persons)
-    if db_persons.empty?
-      puts "\nNo one has rented yet"
-      return
-    end
-    print "\nID of the person: "
-    person_id = gets.chomp.to_i
-    person_fetch = db_persons.select { |person| person.id == person_id }
-
-    if person_fetch[0]&.id
-      puts "\nRentals: "
-      found = false
-      person_fetch[0].rentals.each do |rental|
-        found = true unless rental.person.name == ''
-        print "Person: #{rental.person.name}, Date: #{rental.date}, "
-        puts "Book: \"#{rental.book.title}\" by #{rental.book.author}"
-      end
-      puts "#{person_fetch[0].name} didn't rent a book" unless found
-    else
-      puts "\nID not exists"
-    end
   end
 end

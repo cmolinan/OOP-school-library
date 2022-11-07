@@ -1,4 +1,7 @@
-require_relative 'app'
+require_relative 'only_creates'
+require_relative 'only_lists'
+require_relative 'mock_data'
+
 db = { books: [], persons: [] }
 
 puts "\nWelcome to School Library App"
@@ -16,25 +19,28 @@ def menu_display
 end
 
 def main(db_data)
-  app = App.new
+  lists = Lists.new
+  creates = Creates.new
+  mockdata = MockData.new
+
   case menu_display
   when '1'
-    app.list_all_books(db_data[:books])
+    lists.list_all_books(db_data[:books])
   when '2'
-    app.list_all_people(db_data[:persons])
+    lists.list_all_people(db_data[:persons])
   when '3'
-    app.create_person(db_data[:persons])
+    creates.create_person(db_data[:persons])
   when '4'
-    app.create_book(db_data[:books])
+    creates.create_book(db_data[:books])
   when '5'
-    app.create_rental(db_data)
+    creates.create_rental(db_data)
   when '6'
-    app.list_rentals(db_data[:persons])
+    lists.list_rentals(db_data[:persons])
   when '7'
     puts "\nThank you for using this app!\n\n"
     return
   when '88'
-    app.init_books_and_persons(db_data[:books], db_data[:persons])
+    mockdata.init_books_and_persons(db_data[:books], db_data[:persons])
   else
     puts "\nSelection not valid"
   end
