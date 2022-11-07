@@ -20,9 +20,11 @@ cd src
 ruby main.rb
 
 ## Author
-👤 **Carlos Molina**
-- GitHub: https://github.com/cmolinan
-- LinkedIn: [Carlos Molina](https://www.linkedin.com/in/carlosmolinan/)
+
+| 👤 Name | Github | Twitter | LinkedIn |
+|------|--------|---------|----------|
+|Carlos Molina|[@Cmolina](https://github.com/cmolinan)|[]()|[Carlos Molina](https://www.linkedin.com/in/carlosmolinan/)|
+|Habeeb Efiamotu Musa Owolewa|[@Efiamotu-1](https://github.com/Efiamotu-1)|[@EFYAMOTU](https://twitter.com/EFYAMOTU)|[Habeeb Musa](https://www.linkedin.com/in/Musa-habeeb/)|
 
 ## �� Contributing
 Contributions, issues, and feature requests are welcome!
