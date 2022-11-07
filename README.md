@@ -7,8 +7,6 @@
 * Save records of who borrowed a given book and when.
 * And all of this will be built in a beautiful and well-organized way!
 
-This BRANCH provides the Milestone #4: add basic UI
-
 
 ## Getting Started
 
