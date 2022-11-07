@@ -7,8 +7,6 @@
 * Save records of who borrowed a given book and when.
 * And all of this will be built in a beautiful and well-organized way!
 
-This BRANCH provides the Milestone #4: add basic UI
-
 
 ## Getting Started
 
@@ -20,9 +18,11 @@ cd src
 ruby main.rb
 
 ## Author
-👤 **Carlos Molina**
-- GitHub: https://github.com/cmolinan
-- LinkedIn: [Carlos Molina](https://www.linkedin.com/in/carlosmolinan/)
+
+| 👤 Name | Github | Twitter | LinkedIn |
+|------|--------|---------|----------|
+|Carlos Molina|[@Cmolina](https://github.com/cmolinan)|[]()|[Carlos Molina](https://www.linkedin.com/in/carlosmolinan/)|
+|Habeeb Efiamotu Musa Owolewa|[@Efiamotu-1](https://github.com/Efiamotu-1)|[@EFYAMOTU](https://twitter.com/EFYAMOTU)|[Habeeb Musa](https://www.linkedin.com/in/Musa-habeeb/)|
 
 ## �� Contributing
 Contributions, issues, and feature requests are welcome!
