@@ -24,7 +24,6 @@ class Lists
     print "\nID of the person: "
     person_id = gets.chomp.to_i
     person_fetch = db_persons.select { |person| person.id == person_id }
-    # if person_fetch[0] && person_fetch[0].id
     if person_fetch[0]&.id
       puts "\nRentals: "
       found = false

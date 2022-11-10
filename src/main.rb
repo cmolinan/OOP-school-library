@@ -54,7 +54,6 @@ def main(db_data)
       puts "\nSelection not valid"
     end
   end
-  # main(db_data)
 end
 
 main(db)
