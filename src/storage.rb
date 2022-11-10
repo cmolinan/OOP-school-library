@@ -25,7 +25,6 @@ class Storage
     books.each do |book|
       books_to_file << { title: book.title.to_s, author: book.author.to_s }
     end
-    puts 'Books to file:', books_to_file
     File.write(@path_of_books, JSON[books_to_file])
   end
 
@@ -48,10 +47,11 @@ class Storage
 
   def save_rentals(db_data)
     # get the rentals
+    db_data[:rentals] = []
     db_data[:persons].each do |person|
       person.rentals.each do |rental|
-        db_data[:rentals] << [rental.person.name, rental.book.title]
-        # puts [rental.person.name, rental.book.title]
+        # binding.pry
+        db_data[:rentals] << [rental.person.name, rental.book.title, rental.date]
       end
     end
 
@@ -61,7 +61,8 @@ class Storage
     db_data[:rentals].each do |rental|
       rentals_to_file << {
         name: rental[0].to_s,
-        title: rental[1].to_s
+        title: rental[1].to_s,
+        date: rental[2].to_s
       }
     end
     File.write(@path_of_rentals, JSON[rentals_to_file])
@@ -70,6 +71,7 @@ class Storage
   end
 
   def restore_all(db_data)
+    # restore Books
     file = File.open(@path_of_books, 'a+')
     dataread = file.size.zero? ? [] : JSON.parse(file.read)
     dataread.each do |book|
@@ -77,6 +79,7 @@ class Storage
     end
     file.close
 
+    # restore Persons
     file = File.open(@path_of_persons, 'a+')
     dataread = file.size.zero? ? [] : JSON.parse(file.read)
     dataread.each do |person|
@@ -89,5 +92,17 @@ class Storage
         end
     end
     file.close
+
+    # restore Rentals
+    file = File.open(@path_of_rentals, 'a+')
+    dataread = file.size.zero? ? [] : JSON.parse(file.read)
+    dataread.each do |rental|
+      db_data[:rentals] << [rental['name'], rental['title'], rental['date']]
+    end
+    file.close
+
+    restore_rentals(db_data)
   end
+
+  # def restore_rentals(db_data) end
 end
