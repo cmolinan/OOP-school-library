@@ -13,9 +13,11 @@
 To get a local copy up and running follow these simple steps.
 git clone https://github.com/cmolinan/OOP-school-library in your terminal
 
-Then, get inside the src directory and run the main.rb program
-cd src
-ruby main.rb
+Then, get inside the src directory and run the main.rb program, like this
+
+Step-1 ->  cd src
+
+Step-2 ->  ruby main.rb
 
 ## Author
 
