@@ -16,7 +16,3 @@ describe Classroom do
     expect(@classroom.label).to eq('History')
   end
 end
-
-
-
-
