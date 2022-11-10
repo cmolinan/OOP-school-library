@@ -123,13 +123,4 @@ class Storage
       return index if book.title == title
     end
   end
-
-
-
-
-
-
-
-
-
 end
