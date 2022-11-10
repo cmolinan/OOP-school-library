@@ -1,8 +1,9 @@
 require_relative 'only_creates'
 require_relative 'only_lists'
+require_relative 'storage'
 require_relative 'mock_data'
 
-db = { books: [], persons: [] }
+db = { books: [], persons: [], rentals: [] }
 
 puts "\nWelcome to School Library App"
 
@@ -22,6 +23,7 @@ def main(db_data)
   lists = Lists.new
   creates = Creates.new
   mockdata = MockData.new
+  storage = Storage.new
 
   case menu_display
   when '1'
@@ -37,10 +39,16 @@ def main(db_data)
   when '6'
     lists.list_rentals(db_data[:persons])
   when '7'
+    storage.save_all(db_data)
+    puts "\nSaving the database!\n"
     puts "\nThank you for using this app!\n\n"
     return
   when '88'
     mockdata.init_books_and_persons(db_data[:books], db_data[:persons])
+  when '99'
+    storage.save_all(db_data)
+  when '100'
+    storage.restore_all(db_data)
   else
     puts "\nSelection not valid"
   end

@@ -13,7 +13,7 @@ require_relative 'rental'
 # Make sure that your Person class inherits from Nameable
 class Person < Nameable
   # Getter and Setter
-  attr_accessor :name, :age, :rentals
+  attr_accessor :name, :age, :rentals, :specialization
 
   # Getter
   attr_reader :id, :parent_permission
@@ -26,6 +26,7 @@ class Person < Nameable
     @name = name
     @parent_permission = parent_permission
     @rentals = []
+    @specialization = specialization
   end
 
   # Make sure that this class has a method correct_name implemented.
