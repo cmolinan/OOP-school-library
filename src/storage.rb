@@ -104,5 +104,32 @@ class Storage
     restore_rentals(db_data)
   end
 
-  # def restore_rentals(db_data) end
+  def restore_rentals(db_data)
+    db_data[:rentals].each do |rental|
+      p_index = get_person_index(rental[0], db_data)
+      b_index = get_book_index(rental[1], db_data)
+      date = rental[2]
+      # generate a rent of book
+      db_data[:persons][p_index].add_rental(db_data[:books][b_index], date)
+    end
+  end
+  def get_person_index(name, db_data)
+    db_data[:persons].select.with_index do |person, index|
+      return index if person.name == name
+    end
+  end
+  def get_book_index(title, db_data)
+    db_data[:books].select.with_index do |book, index|
+      return index if book.title == title
+    end
+  end
+
+
+
+
+
+
+
+
+
 end
