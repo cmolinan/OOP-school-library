@@ -17,7 +17,7 @@ Then, get inside the src directory and run the main.rb program
 cd src
 ruby main.rb
 
-## Author
+## Authors
 
 | 👤 Name | Github | Twitter | LinkedIn |
 |------|--------|---------|----------|
